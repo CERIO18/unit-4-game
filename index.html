@@ -7,71 +7,84 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Crystal Collector Game </title>
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    
-    <link rel="stylesheet" type="text/css" href="style.css">
-    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+
     <link href="https://fonts.googleapis.com/css?family=Handlee|Quicksand|Righteous" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    
-        <div class="jumbotron">
-            <h1 class="text-center">
-              <strong>Crystal Collector Game</strong>
-            </h1>
-            <h2 class="text-center">
-                    Rules of the Game</h2>    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
-         <body><br>
-                       <p>You will be given a random number (referred to as "Magic Number.") There are four assorted color crystals below.  When you select one of the crystals, you will add a specific amount of points to your total score.  You win the game by matching your total score to the magic number, you lose the game if your total score goes above the magic number.</p>
 
-                        <p>The value of each crystal is hidden from you until you click on it.  At the beginning of each game, the game will change the values of each crystal.</p>
+<body><br>
 
-                        <div class="row, container">
-                        <h3 class="col-md-10"></h3>
+    <div class="jumbotron">
+        <h1 class="text-center">
+            <strong>Crystal Collector Game</strong>
+        </h1>
+        <h2 class="text-center">Rules of the Game</h2>
 
-                        <h3 class="col-md-10">Magic Number: 
-                          <span id='magicNumber'>0</span>
-                          </h3>
-                          <h3 class="col-md-10 ">Your Score: <span id='yourScore'>0</span>
-                          </h3>
+        <p>You will be given a random number (referred to as "Magic Number.") There are four assorted color crystals
+            below. When you select one of the crystals, you will add a specific amount of points to your total score.
+            You win the game by matching your total score to the magic number, you lose the game if your total score
+            goes above the magic number.</p>
 
-                        <h3 class="col-md-10">Wins: 
-                          <span id='wins'>0</span>
-                          </h3>
-                          <h3 class="col-md-10 ">Losses: <span id='losses'>0</span>
-                          </h3>
-                          <br>          
+        <p>The value of each crystal is hidden from you until you click on it. At the beginning of each game, the game
+            will change the values of each crystal.</p>
+
+        <div class="row, container">
+            <h3 class="col-md-10"></h3>
+
+            <h3 class="col-md-10">Magic Number:
+                <span id='magicNumber'>0</span>
+            </h3>
+
+            <h3 class="col-md-10 ">Your Score: <span id='yourScore'>0</span></h3>
+
+            <h3 class="col-md-10">Wins:
+                <span id='wins'>0</span></h3>
+            <h3 class="col-md-10 ">Losses: <span id='losses'>0</span>
+            </h3>
+            <br>
 
         </div>
-    
-        <div id ="crystals" class="text-center">
 
-            <id="crystals" id="orangered" value="10">
-            <span style="font-size: 150px; color: orangered;">
-                <i class="fas fa-gem"></i>
+        <div id="crystals" class="text-center">
+
+            <span id="orangered" value="10">
+                <span style="font-size: 150px; color: orangered;">
+                    <i class="fas fa-gem"></i>
+                </span>
             </span>
-            <id="crystals" id="black" value="20">
-            <span style="font-size: 150px; color: black;">
-                <i class="fas fa-gem"></i>
+            <span id="black" value="20">
+                <span style="font-size: 150px; color: black;">
+                    <i class="fas fa-gem"></i>
+                </span>
             </span>
-            <id="crystals" id="pink" value="30">
-            <span style="font-size: 150px; color: pink;">
-                <i class="fas fa-gem"></i>
+            <span id="pink" value="30">
+                <span style="font-size: 150px; color: pink;">
+                    <i class="fas fa-gem"></i>
+                </span>
             </span>
-            <id="crystals" id="green" value="40">
-            <span style="font-size: 150px; color: green;">
-                <i class="fas fa-gem"></i>
+            <span id="green" value="40">
+                <span style="font-size: 150px; color: green;">
+                    <i class="fas fa-gem"></i>
+                </span>
             </span>
-           
- 
+
+
         </div>
- 
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    </html>
+
 </body>
+
+</html>
