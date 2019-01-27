@@ -1,70 +1,85 @@
-$( document ).ready()(function getRandomValue() {
-return Math.floor((Math.random() * 120) + 19);
-var yourScore = document.getElementById('yourScore');
-yourScore.innerHTML = 0; 
+$(document).ready(function () {
+  var Random = Math.floor(Math.random() * 101) + 19;
+  $('#magicNumber').text(Random);
 
-var magicNumber = document.getElementById('magicNumber');
-magicNumber.innerHTML = getRandomValue(120, 19);
+  var orangeRed = Math.floor(Math.random() * 11 + 1);
+  var black = Math.floor(Math.random() * 11 + 1);
+  var pink = Math.floor(Math.random() * 11 + 1);
+  var green = Math.floor(Math.random() * 11 + 1);
+  var userTotal = 0;
+  var wins = 0;
+  var losses = 0;
 
-document.getElementById("magicNumber").innerHTML =
-Math.floor(Math.random() * 120) + 19;
-});
+  $('#wins').text(wins);
+  $('#losses').text(losses);
+  $('#userTotal').text(userTotal);
 
-$("#crystals").on("click", function() {
-    alert("I've been clicked!");
-  });
-
-for (var i = 0; i < numberOptions.length; i++) {
+  function reset() {
+    Random = Math.floor(Math.random() * 101 + 19);
+    $('#magicNumber').text(Random);
+    orangeRed = Math.floor(Math.random() * 11 + 1);
+    black = Math.floor(Math.random() * 11 + 1);
+    pink = Math.floor(Math.random() * 11 + 1);
+    green = Math.floor(Math.random() * 11 + 1);
+    userTotal = 0;
+    console.log(userTotal);
   }
-function addToScore(val) {
-  var numberToAdd = parseInt(val);
-  var currentScore = parseInt(yourScore.innerHTML);
-  yourScore.innerHTML = numberToAdd + currentScore;
-}
 
-var magicNumber = $("#number-to-guess").magicNumber;
-var counter = 0;
+  function winner() {
+    alert("YOU WON!");
+    console.log('wins: ', wins);
+    wins++;
+    console.log('wins: ', wins);
+    $('#wins').text(wins);
+    reset();
+  }
 
-var orangeRed = document.getElementById("orangeRed");
-console.log(orangeRed.value);
+  function loser() {
+    alert("Not this time, try again!");
+    losses++;
+    $('#losses').text(losses);
+    reset();
+  }
 
-var black = document.getElementById("black");
-console.log(black.value);
+  $('#orangeRed').on('click', function () {
+    userTotal = userTotal + orangeRed;
+    console.log("New userTotal= " + orangeRed);
+    $('#userTotal').text(userTotal);
+    if (userTotal == Random) {
+      winner();
+    } else if (userTotal > Random) {
+      loser();
+    }
+  })
+  $('#black').on('click', function () {
+    userTotal = userTotal + black;
+    console.log("New userTotal= " + black);
+    $('#userTotal').text(userTotal);
+    if (userTotal == Random) {
+      winner();
+    } else if (userTotal > Random) {
+      loser();
+    }
+  })
+  $('#pink').on('click', function () {
+    userTotal = userTotal + pink;
+    console.log("New userTotal= " + userTotal);
+    $('#userTotal').text(userTotal);
+    if (userTotal == Random) {
+      winner();
+    } else if (userTotal > Random) {
+      loser();
+    }
+  })
+  $('#green').on('click', function () {
+    userTotal = userTotal + green;
+    console.log("New userTotal= " + userTotal);
+    $('#userTotal').text(userTotal);
 
-var pink = document.getElementById("pink");
-console.log(pink.value);
-
-var green = document.getElementById("green");
-console.log(green.value);
-
-orangeRed.addEventListener('click', function() {
-  addToScore(this.value);
-  checkPlayerScore();
+    if (userTotal == Random) {
+      winner();
+    } else if (userTotal > Random) {
+      loser();
+    }
+  })
 });
-
-black.addEventListener('click', function() {
-  addToScore(this.value);
-  checkPlayerScore();
-});
-
-pink.addEventListener('click', function() {
-  addToScore(this.value);
-  checkPlayerScore();
-});
-
-green.addEventListener('click', function() {
-  addToScore(this.value);
-  checkPlayerScore();
-});
-
-function checkPlayerScore() {
-  var playerInt = parseInt(yourScore.innerHTML);
-  var targetInt = parseInt(magicNumber.innerHTML);
-}
-
-  $("#crystals").on("click", function() {
-    var crystalValue = ($(this).attr("data-crystalvalue"));
-    crystalValue = parseInt(crystalValue);
-    counter += crystalValue;
-  });
-
